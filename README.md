@@ -1,24 +1,22 @@
-# README
+# test_booking_system_rest
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Configuration
 
-Things you may want to cover:
+    $ docker-compose build
+    $ docker-compose up
 
-* Ruby version
+### Database creation
 
-* System dependencies
+    $ docker-compose run web rake db:create
 
-* Configuration
+### Database initialization
 
-* Database creation
+    $ docker-compose run web rake db:migrate
 
-* Database initialization
+### How to run the test suite
 
-* How to run the test suite
+    $ rspec
 
-* Services (job queues, cache servers, search engines, etc.)
+### Linting
 
-* Deployment instructions
-
-* ...
+    $ rubocop
