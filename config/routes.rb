@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
-      resources :users, :restaurants, :tables
+      resources :users, :restaurants, :tables, :schedules
     end
   end
 end
