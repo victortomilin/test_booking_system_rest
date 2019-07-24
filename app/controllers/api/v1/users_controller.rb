@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class UsersController < ApplicationController
-      before_action :set_resource, only: [:show, :destroy]
+      before_action :set_resource, only: %i[show destroy]
 
       def index
         collection = ::TestBookingSystem::Models::User.all

@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class RestaurantsController < ApplicationController
-      before_action :set_resource, only: [:show, :update, :destroy]
+      before_action :set_resource, only: %i[show update destroy]
 
       def index
         collection = ::TestBookingSystem::Models::Restaurant.all

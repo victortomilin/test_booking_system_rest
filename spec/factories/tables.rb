@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
-  factory :table, class: "TestBookingSystem::Models::Table" do
+  factory :table, class: 'TestBookingSystem::Models::Table' do
     number { Faker::Number.number(2) }
     association :restaurant, strategy: :create
   end

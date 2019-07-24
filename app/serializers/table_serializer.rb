@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TableSerializer < ActiveModel::Serializer
   attributes :id, :number
 
