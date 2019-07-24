@@ -12,9 +12,9 @@ module Api
         user = ::TestBookingSystem::Models::User.new
 
         if user.save
-          render json: user, status: :created
+          render json: user, serializer: ::UserSerializer, status: :created
         else
-          render json: user.errors, status: :unprocessable_entity
+          render json: { errors: user.errors.messages }, status: :unprocessable_entity
         end
       end
 
@@ -24,9 +24,9 @@ module Api
 
       def destroy
         if resource.destroy
-          render json: resource, status: :ok
+          render json: resource, serializer: ::UserSerializer, status: :ok
         else
-          render json: resource.errors, status: :unprocessable_entity
+          render json: { errors: resource.errors }, status: :unprocessable_entity
         end
       end
 
