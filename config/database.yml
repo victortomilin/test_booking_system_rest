@@ -22,10 +22,14 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   migrations_paths:
     - 'lib/test_booking_system/db/migrate'
+  username: postgres
+  password:
+  host: db
 
 development:
   <<: *default
   database: test_booking_system_rest_development
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
