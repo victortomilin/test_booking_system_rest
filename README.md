@@ -15,8 +15,8 @@
 
 ### How to run the test suite
 
-    $ rspec
+    $ docker-compose run web rspec
 
 ### Linting
 
-    $ rubocop
+    $ docker-compose run web rubocop

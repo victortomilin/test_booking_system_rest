@@ -11,18 +11,11 @@ module Api
       end
 
       def create
-        user = TestBookingSystem::Models::User.find reservation_params[:user_id]
-        table = TestBookingSystem::Models::Table.find reservation_params[:table_id]
-        result = TestBookingSystem::Interactors::BookTable.call(
-          user: user,
-          table: table,
-          date: DateTime.parse(reservation_params[:date]),
-          duration: reservation_params[:duration].to_i
-        )
+        result = CreateReservation.call reservation_params
         if result.success?
           render json: result.reservation, serializer: ::ReservationSerializer, status: :created
         else
-          render json: { errors: result.errors }, status: :unprocessable_entity
+          render json: { errors: result.message }, status: :unprocessable_entity
         end
       end
 
